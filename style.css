@@ -1,0 +1,110 @@
+/* Reset default margin & padding */
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2E8B57, #0F4C75);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    /* Efek gelombang */
+    .wave {
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      bottom: 0;
+      left: 0;
+      background: url('https://cdn.svgator.com/images/2023/06/animated-wave-background.svg') no-repeat;
+      background-size: cover;
+      animation: wave-animation 4s infinite linear;
+    }
+    
+    @keyframes wave-animation {
+      0% { background-position-x: 0; }
+      100% { background-position-x: 1000px; }
+    }
+    
+    .container {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .content {
+      max-width: 600px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    /* Logo */
+    .img-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .img-logo img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+    }
+    
+    .img-logo h3 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #f1f1f1;
+    }
+    
+    /* Tombol */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background: #ff6347;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    
+    .btn:hover {
+      background: #ff4500;
+      transform: scale(1.05);
+    }
+    
