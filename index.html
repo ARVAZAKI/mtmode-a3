@@ -470,39 +470,38 @@
   </div>
 
   <script>
-    // Set the countdown date (7 days from now)
-    const countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + 7);
-    
-    // Update the countdown every second
-    const countdownTimer = setInterval(function() {
-      // Get current date and time
-      const now = new Date().getTime();
-      
-      // Find the distance between now and the countdown date
-      const distance = countDownDate - now;
-      
-      // Time calculations for days, hours, minutes and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      // Display the result with leading zeros if needed
-      document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-      document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-      document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-      document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-      
-      // If the countdown is finished, write some text
-      if (distance < 0) {
-        clearInterval(countdownTimer);
-        document.getElementById("days").innerHTML = "00";
-        document.getElementById("hours").innerHTML = "00";
-        document.getElementById("minutes").innerHTML = "00";
-        document.getElementById("seconds").innerHTML = "00";
-      }
-    }, 1000);
+    // Set the countdown date to 26 March 2025
+const countDownDate = new Date("March 26, 2025 00:00:00").getTime();
+
+// Update the countdown every second
+const countdownTimer = setInterval(function() {
+  // Get current date and time
+  const now = new Date().getTime();
+  
+  // Find the distance between now and the countdown date
+  const distance = countDownDate - now;
+  
+  // Time calculations for days, hours, minutes and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Display the result with leading zeros if needed
+  document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+  document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+  document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+  document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+  
+  // If the countdown is finished, write some text
+  if (distance < 0) {
+    clearInterval(countdownTimer);
+    document.getElementById("days").innerHTML = "00";
+    document.getElementById("hours").innerHTML = "00";
+    document.getElementById("minutes").innerHTML = "00";
+    document.getElementById("seconds").innerHTML = "00";
+  }
+}, 1000);
   </script>
 </body>
 </html>
